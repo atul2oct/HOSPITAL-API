@@ -30,3 +30,5 @@ Each time a patient visits, the doctor will follow 2 steps
 First start with downloading the code and and write npm install on code editor, it will install all dependencies on your editor. You will need a code editor and mongoDB setup on your computer. We will use postman to check the api is working or not,So download postman on your computer.
 
 1.Now use this http://localhost:3000/doctors/register route to register doctor in API and add the info as shown in image
+2.Use this http://localhost:3000/doctors/login to login as a doctor and add info as shown in image
+3.Use this http://localhost:3000/patients/register and add the token in authorization area which is recieved in second point
