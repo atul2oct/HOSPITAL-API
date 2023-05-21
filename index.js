@@ -1,7 +1,7 @@
 const express = require('express'); //requiring express
 const app = express(); //app has the properties of express
 const passport = require('passport'); //requiring passport
-// const jwtPassportStrategy = require('./config/passport_jwt'); //passport jwt config file
+const jwtPassportStrategy = require('./config/passport_jwt'); //passport jwt config file
 
 // connect to the database mongoose connection
 const db = require('./config/mongoose');
