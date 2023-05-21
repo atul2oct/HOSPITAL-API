@@ -9,21 +9,17 @@ let opts = {
     secretOrKey: process.env.SESSION_SECRET_KEY, //secret key used to encrypt/decrypt
 }
 
-passport.use(new JWTStrategy(opts, function(jwtPayLoad, done) {
-    Doctor.findById(jwtPayLoad._id, function(err, doctor) {
-        if(err) {
-            //if error occured
-            console.log('Error in finding user --> Passport JWT');
-            return done(err);
-        }
-        if(doctor) {
-            //if doctor found
-            return done(null, doctor);
-        }else {
-            //if doctor not found
-            return done(null, false);
-        }
-    })
-}));
-
+passport.use(new JWTStrategy(opts, async (jwtPayload, done) => {
+    try {
+      const doctor = await Doctor.findById(jwtPayload._id);
+      if (doctor) {
+        return done(null, doctor);
+      } else {
+        return done(null, false);
+      }
+    } catch (err) {
+      console.log('Error in finding user --> Passport JWT');
+      return done(err);
+    }
+  }));
 module.exports = passport;
