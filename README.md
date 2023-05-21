@@ -25,3 +25,8 @@ Each time a patient visits, the doctor will follow 2 steps
           Can be either of: [Negative, Travelled-Quarantine, Symptoms-Quarantine, Positive-Admit]
 
           Date
+#Instructions about SetUp:
+
+First start with downloading the code and and write npm install on code editor, it will install all dependencies on your editor. You will need a code editor and mongoDB setup on your computer. We will use postman to check the api is working or not,So download postman on your computer.
+
+1.Now use this http://localhost:3000/doctors/register route to register doctor in API and add the info as shown in image
